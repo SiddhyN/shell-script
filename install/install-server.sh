@@ -9,7 +9,6 @@ fi
 # Update installed packages
 echo "Update installed packages"
 apt-get update && apt-get upgrade -y
-echo
 
 # Install utils packages
 echo "Install utils packages"
@@ -51,3 +50,11 @@ service fail2ban start
 cd /etc/fail2ban
 wget https://raw.githubusercontent.com/SiddhyN/shell-scripts/master/install/jail.local
 service fail2ban reload
+
+# Docker
+echo "Install Docker"
+apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual apt-transport-https --no-install-recommends
+curl -fsSL https://yum.dockerproject.org/gpg | apt-key add -
+add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"
+apt-get update && apt-get install -y docker-engine
+echo
