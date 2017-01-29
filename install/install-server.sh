@@ -16,6 +16,11 @@ echo "Install utils packages"
 apt-get install -y software-properties-common curl git zip ca-certificates --no-install-recommends
 echo
 
+# Install PHP7
+echo "Install PHP7"
+apt-get update && apt-get install -y php7.0 php7.0-fpm php7.0-curl --no-install-recommends
+echo
+
 # Install Composer
 echo "Install Composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
@@ -33,11 +38,11 @@ update-rc.d firewall.sh defaults
 # FAIL2BAN : https://github.com/fail2ban/fail2ban
 cd ~
 wget https://github.com/fail2ban/fail2ban/archive/0.9.6.tar.gz
-tar xvfj 0.9.6.tar.gz
+tar zxvf 0.9.6.tar.gz
 cd fail2ban-0.9.6
-python setup.py install
+python3 setup.py install
 
-# Ajout au dÃ©marrage
+# Ajout au démarrage
 cp files/debian-initd /etc/init.d/fail2ban
 update-rc.d fail2ban defaults
 service fail2ban start
