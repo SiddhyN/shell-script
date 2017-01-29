@@ -16,6 +16,11 @@ echo "Install utils packages"
 apt-get install -y software-properties-common curl git zip ca-certificates --no-install-recommends
 echo
 
+# Install PHP7
+echo "Install PHP7"
+apt-get update && apt-get install -y php7.0 php7.0-fpm php7.0-curl --no-install-recommends
+echo
+
 # Install Composer
 echo "Install Composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
