@@ -58,3 +58,8 @@ curl -fsSL https://yum.dockerproject.org/gpg | apt-key add -
 add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"
 apt-get update && apt-get install -y docker-engine
 echo
+
+# Rancher
+echo "Start Rancher server"
+docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:latest
+echo
