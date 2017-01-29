@@ -33,11 +33,11 @@ update-rc.d firewall.sh defaults
 # FAIL2BAN : https://github.com/fail2ban/fail2ban
 cd ~
 wget https://github.com/fail2ban/fail2ban/archive/0.9.6.tar.gz
-tar xvfj 0.9.6.tar.gz
+tar zxvf 0.9.6.tar.gz
 cd fail2ban-0.9.6
-python setup.py install
+python3 setup.py install
 
-# Ajout au dÃ©marrage
+# Ajout au démarrage
 cp files/debian-initd /etc/init.d/fail2ban
 update-rc.d fail2ban defaults
 service fail2ban start
