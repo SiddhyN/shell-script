@@ -1,0 +1,8 @@
+[DEFAULT]
+ignoreip = 127.0.0.1/8 x.x.x.x/32
+bantime = 86400
+findtime = 3600
+maxretry = 5
+
+[sshd]
+enabled = true
