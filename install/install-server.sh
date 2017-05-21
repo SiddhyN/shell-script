@@ -28,7 +28,7 @@ echo
 
 # IPTABLE
 cd ~
-wget https://raw.githubusercontent.com/SiddhyN/shell-scripts/master/install/firewall.sh
+wget https://raw.githubusercontent.com/SiddhyN/shell-script/master/install/firewall.sh
 chmod +x firewall.sh
 
 mv firewall.sh /etc/init.d/
@@ -48,7 +48,7 @@ service fail2ban start
 
 # config avanced
 cd /etc/fail2ban
-wget https://raw.githubusercontent.com/SiddhyN/shell-scripts/master/install/jail.local
+wget https://raw.githubusercontent.com/SiddhyN/shell-script/master/install/jail.local
 service fail2ban reload
 
 # Docker
@@ -61,5 +61,5 @@ echo
 
 # Rancher
 echo "Start Rancher server"
-docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:latest
+docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable
 echo
