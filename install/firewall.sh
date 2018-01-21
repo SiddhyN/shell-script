@@ -21,10 +21,10 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 # Services that the system will offer to the network + luc
-TCP_SERVICES="22 80 443" # SSH 
+TCP_SERVICES="22 80 8080 443" # SSH + rancher
 UDP_SERVICES="500 4500" # rancher port
 # Services the system will use from the network
-REMOTE_TCP_SERVICES="22 53 80 443" # web browsing
+REMOTE_TCP_SERVICES="22 53 80 8080 443" # web browsing
 REMOTE_UDP_SERVICES="53 123 500 4500" # DNS
 # FTP backups 
 # Allow backups to an external FTP
