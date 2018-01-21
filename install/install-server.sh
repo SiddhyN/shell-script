@@ -49,6 +49,7 @@ service fail2ban start
 # config avanced
 cd /etc/fail2ban
 wget https://raw.githubusercontent.com/SiddhyN/shell-script/master/install/jail.local
+echo "You must to add your IP at [ignoreip] in jail.local file and make <service fail2ban reload>"
 service fail2ban reload
 
 # Docker
